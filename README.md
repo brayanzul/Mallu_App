@@ -1,5 +1,8 @@
 # mallu_app
 
+![Mallu](https://user-images.githubusercontent.com/62777613/224461284-83419d3d-60d0-4e80-bfab-d4c858553aeb.PNG)
+
+
 A new Flutter project.
 
 ## Getting Started
