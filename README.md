@@ -4,6 +4,8 @@
 
 ![Mallu_1](https://user-images.githubusercontent.com/62777613/224568007-27264bcb-1af6-4bbc-8ff0-bf1e43f1b4d3.PNG)
 
+![Mallu_2](https://user-images.githubusercontent.com/62777613/224767077-9139152d-6929-48cb-9044-3dc3bf787064.PNG)
+
 A new Flutter project.
 
 ## Getting Started
