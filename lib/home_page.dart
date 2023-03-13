@@ -93,6 +93,7 @@ class HomePage extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
+                        const SizedBox(width: 18),
                         buildColumnWithRow("1", "Elemental Tin Candel", "31"),
                         buildColumnWithRow("2", "Summer Candel", "25"),
                         buildColumnWithRow("3", "Winter Candel", "43"),
@@ -100,8 +101,79 @@ class HomePage extends StatelessWidget {
                       ],
                     ),
                   ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const LineBar(),
+                  Padding(
+                    padding: const EdgeInsets.all(30.0),
+                    child: Row(
+                      children: const [
+                        Text(
+                          "Holiday Special",
+                          style: TextStyle(fontSize: 24),
+                        ),
+                        Spacer(),
+                        Text(
+                          "View All",
+                          style: TextStyle(fontSize: 20, color: Colors.grey),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        buildbottomContainer("6", "Transparent candle", "16 oz", "29"),
+                        buildbottomContainer("5", "white candle", "16 oz", "34"),
+                        buildbottomContainer("7", "Coconut Milk Bath", "16 oz", "21"),
+                        buildbottomContainer("8", "Purple Candle", "16 oz", "14"),
+                      ],
+                    ),
+                  )
                 ],
               ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Container buildbottomContainer(String img, String title, String subTitle, String price) {
+    return Container(
+      height: 150,
+      width: 260,
+      margin: const EdgeInsets.only(left: 20),
+      child: Row(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(28),
+            child: SizedBox(
+                height: 120,
+                width: 100,
+                child: Image.asset(
+                  "assets/images/candel$img.jpg",
+                  fit: BoxFit.cover,
+                )),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(18.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(title),
+                Text(
+                  subTitle,
+                  style: const TextStyle(color: Colors.grey, fontSize: 18),
+                ),
+                const Spacer(),
+                Text(
+                  "\$ $price",
+                  style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+                )
+              ],
             ),
           )
         ],
@@ -184,6 +256,35 @@ class HomePage extends StatelessWidget {
         style: TextStyle(
           color: isSelected ? Colors.white : Colors.grey[300],
           fontSize: 18,
+        ),
+      ),
+    );
+  }
+}
+
+class LineBar extends StatelessWidget {
+  const LineBar({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 5,
+      width: MediaQuery.of(context).size.width,
+      margin: const EdgeInsets.only(left: 40),
+      alignment: Alignment.centerLeft,
+      decoration: BoxDecoration(
+          color: Colors.grey[300],
+          borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(10), bottomLeft: Radius.circular(10))),
+      child: Container(
+        height: 5,
+        width: 100,
+        decoration: const BoxDecoration(
+          color: Colors.black,
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(10), bottomLeft: Radius.circular(10)),
         ),
       ),
     );
